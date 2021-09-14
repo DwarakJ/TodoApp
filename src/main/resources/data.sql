@@ -1,0 +1,2 @@
+create table if not exists person(id bigint auto_increment primary key, name VARCHAR(250) NOT NULL, created_on DATE default CURRENT_TIMESTAMP );
+create table if not exists todo(id bigint auto_increment PRIMARY KEY, person_id bigint NOT NULL, name VARCHAR(250) NOT NULL, created_on DATE default CURRENT_TIMESTAMP, FOREIGN KEY(person_id) REFERENCES person(id) ON UPDATE CASCADE);
